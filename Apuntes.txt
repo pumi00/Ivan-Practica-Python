@@ -1,0 +1,181 @@
+PYTHON:
+
+Indices negativos:
+
+-1 : se refiere al ultimo elemento.
+-2 : se refiere al penultimo elemento.
+-3 : se refiere al antepenultimo elemento. 
+.
+.
+.
+asi sucesivamente.
+
+
+Inputs: input(" ") # se usa para obtener un input.
+
+
+CONDICIONALES:
+
+if, elif, else:
+
+edad = 18
+
+if edad >= 18:
+    print("Eres mayor de edad")
+
+else:
+    print("No eres mayor de edad")
+
+
+ELIF : se usa cuando la condicion anterior es falsa pasa a la siguiente
+
+if condición_1:
+    # Código si condición_1 es verdadera
+elif condición_2:
+    # Código si condición_1 es falsa y condición_2 es verdadera
+elif condición_3:
+    # Código si las condiciones anteriores son falsas y condición_3 es verdadera
+else:
+    # Código si todas las condiciones anteriores son falsas
+
+nota = 85
+
+if nota >= 90:
+    print("A")
+elif nota >= 80:
+    print("B")
+elif nota >= 70:
+    print("C")
+else:
+    print("F")
+
+
+
+BUCLES: 
+
+    FOR: 
+    Se usa para iterar sobre una secuencia (lista, diccionario, conjunto o cadenas de texto).
+
+        Sintaxis basica: 
+        
+            for item in iterable:
+                # Bloque código
+
+    iterable: cualquier objeto sobre el que puedas iterar (listas, rangos, diccionarios, etc.)
+    item: variable que tomara el valor de cada elemento en la secuencia uno a uno en cada iteracion.
+
+
+    range(): cuando se necesitan un numero especifico de iteraciones.
+
+    Ejemplo:
+
+        for i in range(5):
+            print(i) # Imprime del 0 al 4
+
+    Tambien se puede usar start, stop, step:
+
+        for i in range(2, 10, 2)
+        print(i) # Imprime 2, 4, 6, 8
+
+    El numero del final es decir el step que en este caso es el 2 seria el start + step:
+        En este caso empieza en el 2, luego seria el 4, y asi hasta 10 porque es el stop.
+
+
+    WHILE:
+    Sigue ejecutando un bloque de codigo mientras esa condicion sea verdadera.
+    Este tipo de codigo es comun cuando no sabes cuantas veces vas a iterar de antemano pero si sabiendo que condicion.
+
+        Sintaxis basica:
+
+            while condicion:
+                # Bloque código
+
+
+            La condicion es evaluada antes de cada iteracion. Si la condicion es verdadera, el cuerpo del codigo seguira ejecutandose,
+            si es falsa se termina el bucle.
+
+
+        Ejemplo:
+
+            contador 0
+
+            while contador < 5:
+                print(contador)
+                contador += 1 # Aseguramos que la condicion eventualmente sea falsa.
+
+
+
+CONTROL DE FLUJO EN BUCLES:
+    En Python hay res tipos de sentencias principales: break, continue, else.
+
+    BREAK: Sale del bucle, independientemente de si la condición sigue siendo verdadera o no.
+
+    Ejemplo:
+
+        for i in range(10):
+            if i == 5:
+                break  # Sale del bucle cuando i es igual a 5
+                print(i)
+
+    CONTINUE: Salta la iteración actual y continúa con la siguiente iteración del bucle.
+
+    Ejemplo:
+
+        for i in range(5):
+            if i == 2:
+        continue  # Salta el 2 y continúa con el siguiente valor
+            print(i)
+
+    ELSE: Los bucles for y while pueden tener una cláusula else, que se ejecuta solo si el bucle termina sin haber sido interrumpido por un break.
+
+    Ejemplo:
+
+
+    for i in range(5):
+        print(i)
+    else:
+        print("Bucle terminado")  # Se ejecuta solo si no se usa un `break`
+
+
+BUCLES ANIDADOS:
+
+    Es posible tener bucles dentro de todos los bucles. Es util cuando trabajas con estructuras de datos mas complejas, como matrices o listas de listas.
+
+    for i in range(3):
+        for j in range(2):
+            print(f"i: {i}, j: {j}")
+
+            -El bucle externo (para i) itera 3 veces (de 0 a 2).
+            -Por cada iteración de i, el bucle interno (para j) itera 2 veces (de 0 a 1).
+            -Así que el total de iteraciones es 3 * 2 = 6, y por eso se imprimen 6 líneas.
+
+
+
+    EXPLICACION DETALLADA:
+
+        1. Cuando i = 0:
+            
+            El segundo bucle comienza y j toma los valores 0 y 1.
+            Primero se imprime: i: 0, j: 0.
+            Luego se imprime: i: 0, j: 1.
+
+        2. Cuando i = 1:
+
+            El segudno bucle vuelve a recorrer range(2) y j toma nuevamente los valores 0 y 1.
+            Primero se imprime: i: 1, j: 0.
+            Luego se imprime: i: 1, j: 1.
+
+         3. Cuando i = 2:
+
+            El segudno bucle recorre range(2) y j toma nuevamente los valores 0 y 1.
+            Primero se imprime: i: 2, j: 0.
+            Luego se imprime: i: 2, j: 1.
+
+
+        i: 0, j: 0
+        i: 0, j: 1
+        i: 1, j: 0
+        i: 1, j: 1
+        i: 2, j: 0
+        i: 2, j: 1
+
