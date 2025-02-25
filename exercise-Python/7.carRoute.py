@@ -1,2 +1,3 @@
+import math
 def car_route(n,m):
-    return None
+    return int(math.ceil(m/n))
