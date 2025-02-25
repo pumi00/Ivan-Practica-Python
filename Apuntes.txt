@@ -207,3 +207,138 @@ PASAR NUMEROS A STRING PARA SUMARLOS ENTRE SI O MAS OPERACIONES:
 
         def digit_sum(num):
             return sum(int(x) for x in str(abs(num)))
+
+
+
+MATH:
+
+
+Categoría:	Funciones principales
+Redondeo:	ceil, floor, trunc, round
+Potencias y logaritmos:	pow, sqrt, exp, log, log10, log2
+Trigonometría:	sin, cos, tan, asin, acos, atan, radians, degrees
+Combinatoria:	factorial, gcd, lcm, comb, perm
+Constantes:	pi, e, tau, inf, nan
+
+Hay varios tipos de math:
+
+    Para redondear hay varios tipos:
+        
+    math.ceil(x) → Redondea hacia arriba al entero más cercano.
+    math.floor(x) → Redondea hacia abajo al entero más cercano.
+    math.trunc(x) → Elimina la parte decimal, dejando solo la parte entera.
+    round(x, n) → Redondea x a n decimales (no pertenece a math, pero es útil).
+
+    import math
+print(math.ceil(4.3))   # 5
+print(math.floor(4.7))  # 4
+print(math.trunc(4.9))  # 4
+print(round(4.567, 2))  # 4.57
+
+
+
+FUNCIONES DE POTENCIAS Y LOGARITMICOS
+math.pow(x, y) → Calcula 
+x
+y
+x 
+y
+  (similar a x ** y).
+math.sqrt(x) → Raíz cuadrada de x.
+math.exp(x) → Calcula 
+e
+x
+e 
+x
+  (exponencial).
+math.log(x) → Logaritmo natural 
+ln
+⁡
+(
+x
+)
+ln(x).
+math.log(x, base) → Logaritmo en una base específica.
+math.log10(x) → Logaritmo en base 10.
+math.log2(x) → Logaritmo en base 2.
+
+Ejemplo:
+
+print(math.pow(2, 3))   # 8.0
+print(math.sqrt(25))    # 5.0
+print(math.exp(2))      # 7.38905609893065 (e^2)
+print(math.log(10))     # 2.302585092994046 (ln 10)
+print(math.log(100, 10))# 2.0 (logaritmo base 10 de 100)
+
+
+
+
+
+FUNCIONES TRIGONOMETRICAS
+
+math.sin(x), math.cos(x), math.tan(x) → Seno, coseno y tangente (en radianes).
+math.asin(x), math.acos(x), math.atan(x) → Funciones trigonométricas inversas.
+math.degrees(x) → Convierte radianes a grados.
+math.radians(x) → Convierte grados a radianes.
+
+Ejemplo:
+
+print(math.sin(math.radians(30)))  # 0.5
+print(math.cos(math.radians(60)))  # 0.5
+print(math.tan(math.radians(45)))  # 1.0
+print(math.degrees(math.pi))       # 180.0
+
+
+
+FUNCIONES FACTORIALES Y COMBINATORIAS
+math.factorial(n) → Calcula el factorial de n (
+n
+!
+n!).
+math.gcd(a, b) → Máximo común divisor (MCD).
+math.lcm(a, b) → Mínimo común múltiplo (MCM) (Python 3.9+).
+math.comb(n, k) → Número de combinaciones 
+C
+(
+n
+,
+k
+)
+C(n,k) (Python 3.8+).
+math.perm(n, k) → Número de permutaciones 
+P
+(
+n
+,
+k
+)
+P(n,k) (Python 3.8+).
+
+Ejemplo:
+
+print(math.factorial(5))  # 120 (5! = 5×4×3×2×1)
+print(math.gcd(24, 36))   # 12 (MCD de 24 y 36)
+print(math.lcm(4, 6))     # 12 (MCM de 4 y 6)
+print(math.comb(5, 2))    # 10 (Combinaciones de 5 elementos tomados de 2 en 2)
+print(math.perm(5, 2))    # 20 (Permutaciones de 5 elementos tomados de 2 en 2)
+
+
+
+CONSTANTES MATEMATICAS
+math.pi → Aproximación de π (3.141592653589793).
+math.e → Número de Euler 
+e
+e (2.718281828459045).
+math.tau → 
+τ
+τ (2π).
+math.inf → Representa infinito (float('inf')).
+math.nan → Representa "Not a Number" (float('nan')).
+
+Ejemplo:
+
+print(math.pi)   # 3.141592653589793
+print(math.e)    # 2.718281828459045
+print(math.tau)  # 6.283185307179586
+print(math.inf > 1000000)  # True
+print(math.isnan(float('nan')))  # True
