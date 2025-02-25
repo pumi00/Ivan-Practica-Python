@@ -179,3 +179,31 @@ BUCLES ANIDADOS:
         i: 2, j: 0
         i: 2, j: 1
 
+
+
+
+PASAR NUMEROS A STRING PARA SUMARLOS ENTRE SI O MAS OPERACIONES:
+
+    Calcular la suma de los digitos:
+
+        def digit_sum(num):
+        aux = 0  # Inicializamos la variable auxiliar en 0
+        for x in str(num):  # Convertimos el número en cadena y recorremos cada dígito
+            aux = aux + int(x)  # Convertimos el dígito en entero y lo sumamos a aux
+        return aux  # Retornamos la suma total de los dígitos
+
+
+    Explicación paso a paso:
+
+        Convertimos el número en una cadena (str(num)) para poder recorrer sus dígitos individualmente.
+        Iteramos sobre cada dígito con un for que recorre los caracteres de la cadena.
+        Convertimos cada carácter a entero (int(x)) y lo sumamos a la variable aux.
+        Retornamos el valor total de la suma de los dígitos.
+
+    Luego en este paso nos puede dar un error si el numero es negativo, entonces a la linea de str(num) le añadimos abs (str(abs(num))) esto sirve para
+    evitar el signo negativo.
+
+    Tambien se puede escribir en una sola linea:
+
+        def digit_sum(num):
+            return sum(int(x) for x in str(abs(num)))
