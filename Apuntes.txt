@@ -1,5 +1,3 @@
-PYTHON:
-
 Indices negativos:
 
 -1 : se refiere al ultimo elemento.
@@ -134,7 +132,7 @@ CONTROL DE FLUJO EN BUCLES:
     for i in range(5):
         print(i)
     else:
-        print("Bucle terminado")  # Se ejecuta solo si no se usa un `break`
+        print("Bucle terminado")  # Se ejecuta solo si no se usa un break
 
 
 BUCLES ANIDADOS:
@@ -342,3 +340,28 @@ print(math.e)    # 2.718281828459045
 print(math.tau)  # 6.283185307179586
 print(math.inf > 1000000)  # True
 print(math.isnan(float('nan')))  # True
+
+
+
+
+FACTORIZAR:
+
+El factorial de un numero entero positivo n se define como el producto de todos los numeros enteros desde 1 hasta n.
+Se representa con el simbolo !n.
+
+Se coge esat formula para cualquier numero: n!=n×(n−1)×(n−2)×...×2×1 hasta que llegue a 1 y ahi ya se para.
+Es decir si el numero fuera 5 seria:
+
+                5!: 5 x 4 = 20   
+                    20 x 3 = 60
+                    60 x 2 = 120
+                    120 x 1 = 120
+
+                    Entonces 120 seria el resultado de factorizar el 5
+
+
+                i = 1 → result = 1 * 1 = 1
+                i = 2 → result = 1 * 2 = 2
+                i = 3 → result = 2 * 3 = 6
+                i = 4 → result = 6 * 4 = 24
+                i = 5 → result = 24 * 5 = 120
