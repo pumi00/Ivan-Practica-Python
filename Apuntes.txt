@@ -1,3 +1,21 @@
+LIBRERIAS COMUNES:
+
+
+math – Funciones matemáticas (math.sqrt(), math.ceil(), etc.).
+
+random – Generación de números aleatorios (random.randint(1,10)).
+
+datetime – Manejo de fechas (datetime.datetime.now()).
+
+re – Expresiones regulares (re.search(r"\d+", "abc123")).
+
+requests – Realizar peticiones HTTP (requests.get(url)).
+
+json – Manejo de JSON (json.loads(), json.dumps()).
+
+
+
+
 Indices negativos:
 
 -1 : se refiere al ultimo elemento.
@@ -365,3 +383,45 @@ Es decir si el numero fuera 5 seria:
                 i = 3 → result = 2 * 3 = 6
                 i = 4 → result = 6 * 4 = 24
                 i = 5 → result = 24 * 5 = 120
+
+
+
+
+TEMAS AVANAZADOS:
+
+
+    COMPRENSION DE LISTAS:
+        Es una forma para generar listas de numeros pares
+
+
+        Ejemplo:
+
+            numeros = [x for x in range(10) if x % 2 == 0]
+            print(numeros)
+
+
+            Explicacion:
+
+                1. Evaluar el range(10): Genera los numeros del 0-9 el 10 se excluye.
+                2. Iterar sobre cada numero que genera el range y mirar a ver si es par o no es decir:
+
+                    0	0 % 2 == 0 → ✅	Sí
+                    1	1 % 2 == 0 → ❌	No
+                    2	2 % 2 == 0 → ✅	Sí
+                    3	3 % 2 == 0 → ❌	No
+                    4	4 % 2 == 0 → ✅	Sí
+                    5	5 % 2 == 0 → ❌	No
+                    6	6 % 2 == 0 → ✅	Sí
+                    7	7 % 2 == 0 → ❌	No
+                    8	8 % 2 == 0 → ✅	Sí
+                    9	9 % 2 == 0 → ❌	No
+
+                El % es el modulo y mirar a ver si el resto es 0 en este caso en concreto
+
+                3. Construccion de la lista:
+
+                    Despues de comprobar las condiciones creamos una lista con los numeros pares:
+
+                        [0, 2, 4, 6]
+
+                4. Imprimir el resultado
