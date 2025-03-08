@@ -1,3 +1,85 @@
+OPERADORES:
+
+    Artimeticos:
+
+    ** : eleva el numero a exponente
+    + : suma
+    - : resta 
+    * : multipliacion
+    / : division
+    // : division entera (nos da el dato de la division entre esos dos numeros con un valor de un numero entero)
+    % : obtener el resto de esos dos numeros
+
+    Comparacion:
+
+    == : igualdad
+    != : distinto
+    > : mayor que
+    < : menor que 
+    >= : mayor o igual que
+    <= menor o igual que
+
+
+
+    En python uno de los operadores menos conocidos es el bit a bit:
+
+    & : este operador se utiliza principalmente para realizar operaciones logicas en el codigo.
+
+    Por ejemplo: 
+        Para comprobar si el numero es par o impar podemos usar el operador & que con el ultimo bit del numero 
+        sabiendo si es 1 es impar y si es 0 es par.
+
+        Otro uso comun es la manipulacion de colores en programacion grafica:
+            Los colores se pueden representar en tres valores: rojo, azul y verde.
+                Cada uno de estos colores se representa mediante un byte y cada byte puede representarse
+                utilizando 8 bits:
+
+                    color = (100, 50, 75)
+                    r, g, b = color
+                    r = r | 0b11111111
+                    color = (r, g, b)
+                    print(color)
+
+
+
+
+    Desplazamiento:
+        Se aplica para mover bits de un lado a otro, se representa de esta manera “«” o “»”, donde "« n" indica el numero de desplazamiento 
+
+        Por ejemplo: 
+             
+            Si tenemos el numero decimal 10 que en binario es 1010.
+            Le aplicamos un desplazamiento de << 1 , obtenemos 10100 que es 20 en numeros decimales
+            en este caso añadimos un 0 al final del numero binario.
+            Para entenderlo de cierta >> se desplaza hacia la derecha, << se desplaza hacia la izquierda y si desplazamos mas bits
+            de los que contiene el numero es igual a 0
+
+
+
+
+PRECEDENCIA DE LOS OPERADORES EN PYTHON:
+     
+     Esto es importante ya que algunos operadores se evaluan antes que otros y esto nos sirve para evitar errores
+     en nuestros proyectos:
+
+     Por ejemplo:
+
+        resultado = 4 + 5 / 2 * 3
+
+    Al ver esto podemos pensar que el resultado es 11.5 ya que hacemos primero la division luego la multiplicacion y despues la suma.
+    Pero en Python la precedencia de los operadores hace que se evalue primero la multiplicacion luego la division, por lo tanto, el resultado es 11.0.
+
+    Para evitar este tipo de errores podemos hacer uso de los parentesis:
+
+    resultado = (4 + (5 / 2)) * 3 = 19.5
+
+    Otro aspecto importante de la precedencia de los operadores es que hay veces que tienen la misma precedencia entonces se realiza de izquierda a derecha:
+
+    resultado = 10 / 2 * 3 = 15
+
+
+
+
 LIBRERIAS COMUNES:
 
 
@@ -226,6 +308,13 @@ PASAR NUMEROS A STRING PARA SUMARLOS ENTRE SI O MAS OPERACIONES:
 
 
 
+    Convertir datos:
+
+        Tambien es posible pasar tipo de datos de numeros enteros a strings y vicersa:
+
+            int : pasar de string a numero.
+            str : pasar de numero a string.
+
 MATH:
 
 
@@ -425,3 +514,6 @@ TEMAS AVANAZADOS:
                         [0, 2, 4, 6]
 
                 4. Imprimir el resultado
+
+
+
