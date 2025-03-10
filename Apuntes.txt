@@ -724,5 +724,34 @@ Métodos Especiales (Mágicos)
 
 
 
+FUNCIONES:
+
+Tipo de datos basicos:
+
+    int(): Convierte en un valor entero
+
+    float(): Convierte en un valor float
+
+    str(): Convierte en un valor de str
+
+    bool(): Convierte en un valor booleano ( True o False )
+
+    complex(): Crea un numero complejo a partir de dos valores ( real e imaginario )
+
+
+
+Funciones matematicas:
+
+    abs(): Devuelve el valor absoluto del numero 
+
+    pow(x, y): Devuelve x elevado a y 
+
+    round(): Redondea un numero a un numero especifico de decimales
+
+    max(): Devuelve el valor maximo del numero
+
+    min(): Devuelve el valor minimo del numero 
+
+    sum(): Devuelve la suma de los elementos iterable
 
 
