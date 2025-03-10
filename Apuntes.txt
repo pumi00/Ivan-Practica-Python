@@ -517,3 +517,212 @@ TEMAS AVANAZADOS:
 
 
 
+METODOS:
+
+
+    Metodos de Cadenas:
+
+        upper(): Convierte la cadena a mayúsculas.
+
+        lower(): Convierte la cadena a minúsculas.
+
+        capitalize(): Convierte la primera letra a mayúscula.
+
+        replace(old, new): Reemplaza subcadenas.
+
+        split(): Divide la cadena en una lista.
+
+        strip(): Elimina los espacios al principio y final.
+
+        find(): Encuentra la primera ocurrencia de una subcadena.
+
+        count(): Cuenta las ocurrencias de un subtexto.
+
+        join(): Une una lista de cadenas en una sola.
+
+        format(): Formatea la cadena con valores.
+
+        startswith(): Comprueba si la cadena empieza con un prefijo.
+
+        endswith(): Comprueba si la cadena termina con un sufijo.
+
+
+    Metodos de Listas:
+
+        append(): Añade un elemento al final
+
+        extend(): Añade un elemento al principio
+
+        insert(): Inserta un elemento en una posicion especifica
+
+        remove(): Elimina la primera ocurrencia de un elemento
+
+        pop(): Elimina y devuelve un elemento
+        
+        sort(): Ordena la lista 
+
+        reverse(): Invierte el orden de los elementos 
+
+        index(): Devuelve el indice de un valor 
+        
+        count(): Cuenta las ocurrencias de un valor 
+
+        clear(): Elimina todos los elementos de la lista 
+
+
+
+    Metodos de Diccionario:
+
+        keys(): Devuelve las claves del diccionario 
+
+        values(): Devuelve los valores del diccionario
+
+        items(): Devuelve los pares (clave, valor)
+        
+        get(): Obtiene el valor de una clave
+
+        pop(): Elimina una clave y un valor
+
+        update(): Actualiza el diccionario con otro
+
+        clear(): Elimina todos los elementos del diccionario
+
+        setdefault(): Devuelve el valor de una clave, o la establece si no existe
+
+
+    Metodos de Conjuntos(Sets):
+
+        add(): Añade un elemento al conjunto.
+
+        remove(): Elimina un elemento.
+
+        discard(): Elimina un elemento sin error si no existe.
+
+        union(): Devuelve la unión de dos conjuntos.
+
+        intersection(): Devuelve la intersección de dos conjuntos.
+
+        difference(): Devuelve la diferencia entre dos conjuntos.
+
+        issubset(): Comprueba si el conjunto es subconjunto.
+
+        issuperset(): Comprueba si el conjunto es superconjunto.
+
+
+    Métodos de Archivos (Files):
+
+        open(): Abre un archivo.
+        
+        read(): Lee el contenido del archivo.
+
+        readline(): Lee una línea del archivo.
+
+        write(): Escribe en el archivo.
+
+        writelines(): Escribe múltiples líneas en el archivo.
+
+        close(): Cierra el archivo.
+
+
+    Métodos de Números:
+
+        abs(): Devuelve el valor absoluto de un número.
+
+        round(): Redondea un número.
+
+        max(): Devuelve el valor máximo.
+
+        min(): Devuelve el valor mínimo.
+
+        sum(): Suma los elementos de un iterable.
+
+
+Métodos de Funciones
+
+        len(): Devuelve la longitud de un objeto.
+
+        type(): Devuelve el tipo de un objeto.
+
+        isinstance(): Comprueba si un objeto es de un tipo específico.
+
+        callable(): Comprueba si un objeto es llamable.
+
+        help(): Muestra la ayuda de un objeto o módulo.
+
+        dir(): Devuelve una lista de atributos y métodos de un objeto.
+
+
+Métodos de Excepciones
+
+        try...except: Bloques para manejar errores.
+
+        raise: Lanza una excepción personalizada.
+
+        assert: Verifica una condición, lanza excepción si es falsa.
+
+
+Funciones de Módulos Estándar Comunes
+Módulo math
+
+        math.sqrt(): Devuelve la raíz cuadrada.
+
+        math.pow(): Devuelve el valor de un número elevado.
+
+        math.factorial(): Devuelve el factorial de un número.
+
+        math.sin(), math.cos(), math.tan(): Funciones trigonométricas.
+
+
+Módulo datetime
+
+        datetime.now(): Devuelve la fecha y hora actuales.
+
+        datetime.strptime(): Convierte una cadena en fecha.
+
+        datetime.strftime(): Convierte una fecha en cadena.
+
+
+Módulo random
+
+        random.randint(): Devuelve un número entero aleatorio.
+
+        random.choice(): Elige un elemento aleatorio.
+
+        random.shuffle(): Mezcla aleatoriamente una lista.
+
+
+Módulo os
+
+        os.getcwd(): Devuelve el directorio de trabajo actual.
+
+        os.chdir(): Cambia el directorio de trabajo.
+
+        os.listdir(): Devuelve una lista de archivos en un directorio.
+
+
+Módulo sys
+
+        sys.argv: Lista de argumentos pasados al script.
+
+        sys.exit(): Sale del programa.
+
+        sys.path: Lista de rutas de búsqueda de módulos.
+
+
+Métodos Especiales (Mágicos)
+
+        __init__(): Constructor de la clase.
+
+        __str__(): Define cómo se imprime un objeto.
+
+        __repr__(): Representación de un objeto.
+
+        __len__(): Devuelve la longitud de un objeto.
+
+        __add__(): Define la suma de objetos.
+
+
+
+
+
+
