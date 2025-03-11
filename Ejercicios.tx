@@ -1,0 +1,122 @@
+MATRICES:
+
+Enunciado:
+
+Se te da una matriz M, que contiene enteros positivos y negativos. Debe ser ordenada en un patrón de columnas de arriba hacia abajo, comenzando siempre con el elemento más bajo colocado en la posición superior izquierda, y terminando con el más alto dependiendo del valor de n (el número de columnas):
+
+Si n es impar, el número más alto debe colocarse en la posición inferior derecha.
+Si n es par, el número más alto debe colocarse en la posición superior derecha.
+Ejemplo:
+
+Dada la matriz:
+
+
+M = [[-20, -4, -1],
+     [  1,  4,  7], 
+     [  8, 10, 12]]
+La matriz ordenada debería ser:
+
+
+M_ = [[-20, 7, 8],
+      [-4, 4, 10],
+      [-1, 1, 12]]
+Para que sea más comprensible, mostramos las direcciones del ordenamiento de la nueva matriz con flechas:
+
+source: imgur.com
+
+Crea la función up_down_col_sort() que recibe una matriz como argumento y realiza este tipo de ordenamiento.
+
+Tu función será probada con matrices cuadradas o rectangulares de m filas y n columnas.
+
+Características de las pruebas aleatorias:
+
+Número de pruebas = 120
+10 <= m <= 200
+10 <= n <= 200
+-1000 <= M[i,j] <= 1000
+
+
+Este enunciado describe cómo se debe ordenar una matriz siguiendo ciertas reglas sobre las posiciones relativas de los elementos según el número de columnas, 
+y proporciona ejemplos para ilustrarlo. La función que se debe crear, 
+up_down_col_sort(), tendrá que organizar los elementos de la matriz respetando esas reglas.
+
+
+
+def up_down_col_sort(M):
+    # 1. Recoger todos los elementos de la matriz M en una lista
+    elements = []
+    for row in M:
+        elements.extend(row)
+    
+    # 2. Ordenar los elementos de menor a mayor
+    elements.sort()
+    
+    # 3. Obtener las dimensiones de la matriz
+    m = len(M)  # número de filas
+    n = len(M[0])  # número de columnas
+    
+    # 4. Crear la nueva matriz con la misma estructura
+    M_sorted = [[0] * n for _ in range(m)]
+    
+    # 5. Colocar los elementos en la matriz siguiendo el patrón
+    idx = 0
+    for col in range(n):
+        if col % 2 == 0:  # Si la columna es par (0, 2, 4, ...)
+            for row in range(m):
+                M_sorted[row][col] = elements[idx]
+                idx += 1
+        else:  # Si la columna es impar (1, 3, 5, ...)
+            for row in range(m-1, -1, -1):
+                M_sorted[row][col] = elements[idx]
+                idx += 1
+    
+    return M_sorted
+
+    En primer lugar tomamos todos los numeros que estan en la matriz y ponerlos en una lista.
+
+        elements = []
+        for row in M:
+            elements.extend(row)
+
+        for row in M : Recorre cada fila de la matriz
+        elements.extend(row): Esto pone todos los numeros de esa fila dentro de la lista elements
+
+
+        Despues de usar ese codido la lista elements se veria asi
+
+        elements = [-20, -4, -1, 1, 4, 7, 8, 10, 12]
+
+
+
+    En segundo lugar tenemos que ordenarlos de menos a mayor usando el sort():
+
+    elements.sort()
+
+
+
+    En tercer lugar preparamos la nueva matriz vacia
+
+    M_sorted = [[0] * n for _ in range(m)]
+
+    el valor _ se usa en los for cuando nos da igual que valor poner es como poner 
+    no me importa el valor de esta variable
+
+
+    En cuarto lugar deberemos colocar los numeros dentro de la matriz y ver si es par o no
+
+    idx = 0  # Esto es un índice que nos dice qué número de la lista poner en la nueva matriz
+    for col in range(n):
+        if col % 2 == 0:  # Si la columna es par
+            for row in range(m):  # Colocamos de arriba hacia abajo
+                M_sorted[row][col] = elements[idx]
+                idx += 1  # Pasamos al siguiente número
+
+        else:  # Si la columna es impar
+            for row in range(m - 1, -1, -1):  # Colocamos de abajo hacia arriba
+                M_sorted[row][col] = elements[idx]
+                idx += 1  # Pasamos al siguiente número
+
+
+    Y por ultimo tenemos que devolver la matriz ordenada
+
+    return M_sorted
