@@ -1,0 +1,117 @@
+FUNCIONES:
+
+    Una funcion es un grupo de instrucciones que realizan una tarea especifica.
+    Se define usando la palabra clave def, seguida del nombre de la funcion y los parametros entre parentesis.
+    Despues de los parentesis se utiliza un colon : y se empieza a definir el cuerpo de la funcion.
+
+    Ejemplo:
+
+
+        def suma(a,b):
+            resultado = a + b
+            return resultado
+
+        El return se usa en una funcion para poder devolverle algo es decir en este caso estamos devolviendo 
+        el resultado de la suma.
+        Si una funcion no tiene la palabra return, esa funcion devolvera None.
+
+        Se pueden pasar parametros con nombres en especifico por ejemplo:
+
+        def nombreFuncion(nombre="Juan", edad=30)
+
+
+FUNCIONES PREDEFINIDAS EN PYTHON:
+
+    print(): Esta funcion nos permite imprimir mensajes en consolas
+
+    input(): Esta funcion le pide al usuario que introduzca datos
+
+    len(): Esta funcion nos permite averiguar la longitud de un objeto
+
+    range(): Esta funcion nos permite crear una secuencia de numeros
+
+
+
+
+
+
+
+_________________________LISTAS_________________________
+
+
+LISTAS:
+
+    Una lista es una coleccion ordenada de elementos que pueden ser de cualquier tipo.
+    Las listas se definen con corchetes y los elementos se separan con comas.
+
+    numeros = [1, 2, 3, 4, 5]
+
+    Se puede acceder a esos datos mediante el indice, que es la posicion del elemento en la lista, que comienza en 0.
+    Es decir, si queremos acceder al segundo numero que contiene la lista seria 1.
+
+
+    Dentro de la lista hay mas funciones que podemos realizar como añadir numeros, ordenarlos... etc.
+
+    Metodos de Listas:
+
+        append(): Añade un elemento al final
+
+        extend(): Añade un elemento al principio
+
+        insert(): Inserta un elemento en una posicion especifica
+
+        remove(): Elimina la primera ocurrencia de un elemento
+
+        pop(): Elimina y devuelve un elemento
+        
+        sort(): Ordena la lista 
+
+        reverse(): Invierte el orden de los elementos 
+
+        index(): Devuelve el indice de un valor 
+        
+        count(): Cuenta las ocurrencias de un valor 
+
+        clear(): Elimina todos los elementos de la lista 
+
+
+
+    Las listas son una coleccion ordenada y mutable.
+
+    Mutable quiere decir que las listas pueden ser ordenadas.
+
+
+    Tambien podemos iterar por cada elemento con el bucle for:
+
+
+    nombres = ["Juan", "Maria", "Pedro"]
+
+    for nombre in nombres:
+        print(nombre)
+
+    Este codigo imprimira:
+
+    Juan
+    Maria
+    Pedro
+
+
+
+
+    Las listas pueden contener otro tipo de elementos incluso otro tipo de listas o objetos del mismo tipo:
+
+    lista_ejemplo = [1, "dos", True, [1, 2, 3, 4]]
+
+    En este caso la lista tiene un entero, un string, un booleano y una lista.
+
+    Tambien podemos hacer uso del len() para encontrar la longitud de una lista.
+
+
+    Podemos eliminar elementos con la palabra clave del o remove(), la diferencia que tienen es que la palabra del
+    elimina un elemento en una posicion especifica mientras que remove() elimina un elemento por su valor
+
+    Ejemplo:
+
+    frutas = ["pera", "manzana", "uva", "mango"]
+    del frutas[0] # elimina pera
+    frutas.remove('manzana')  # elimina manzana
