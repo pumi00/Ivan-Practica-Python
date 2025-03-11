@@ -519,6 +519,11 @@ TEMAS AVANAZADOS:
 
 METODOS:
 
+isalpha() → Verifica si un carácter es una letra.
+isdigit() → Verifica si es un número.
+isalnum() → Verifica si es una letra o un número.
+sum(1 for i in s if i.isalnum()) → Cuenta cuántos caracteres cumplen la condición.
+
 
     Metodos de Cadenas:
 
@@ -533,6 +538,10 @@ METODOS:
         split(): Divide la cadena en una lista.
 
         strip(): Elimina los espacios al principio y final.
+
+        lstrip: Elimina los caracteres al principio de la cadena(es decir, el de la izquierda)
+        
+        rstrip: Elimina los caracteres al final de la cadena(es decir, el de la derecha)
 
         find(): Encuentra la primera ocurrencia de una subcadena.
 
