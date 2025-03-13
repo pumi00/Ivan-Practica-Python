@@ -30,6 +30,8 @@ FUNCIONES PREDEFINIDAS EN PYTHON:
 
     range(): Esta funcion nos permite crear una secuencia de numeros
 
+    ord(): Con el metodo ord podemos pasar las letras a sus numeros ASCII 
+
 
 
 
