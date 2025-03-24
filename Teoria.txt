@@ -245,3 +245,165 @@ CONJUNTOS:
     # Crear un conjunto
     numeros = {1, 2, 3, 4, 5}
     letras = set(['a', 'b', 'c', 'd'])
+
+
+
+    Operaciones con conjuntos:
+
+        Unión (|): crea un nuevo conjunto con todos los elementos unicos de ambos conjuntos.
+
+        Intersección (&): nos devuelve los elementos comunes entre dos conjuntos.
+
+        Diferencia (-): nos devuelve los elementos que estan en el primer conjunto pero no en el segundo.
+
+        Diferencia simétrica (^): nos devuelve los elementos de ambos conjuntos que no estan en el otro.
+
+
+        EN ESTAS OPERACIONES CON CONJUNTOS PODEMOS USAR EL SIMBOLO Y EL .NOMBRE:
+
+            frutas_y_verduras = frutas | {"zanahoria", "lechuga"}
+            frutas_y_verduras = frutas.union(["zanahoria", "lechuga"])
+
+            Ejemplo con el operador union.
+        
+
+
+
+
+        estudiantes_1 = {'Ana', 'Luis', 'Pedro', 'Sofía'}
+        estudiantes_2 = {'Fernando', 'Luis', 'Pedro', 'Sofía', 'Valeria'}
+
+        # Unión
+        todos_los_estudiantes = estudiantes_1 | estudiantes_2
+        print(todos_los_estudiantes) # {'Pedro', 'Fernando', 'Luis', 'Sofía', 'Valeria', 'Ana'}
+
+        # Intersección
+        estudiantes_repetidos = estudiantes_1 & estudiantes_2
+        print(estudiantes_repetidos) # {'Pedro', 'Luis', 'Sofía'}
+
+        # Diferencia
+        estudiantes_solo_grupo1 = estudiantes_1 - estudiantes_2
+        print(estudiantes_solo_grupo1) # {'Ana'}
+
+        # Diferencia simétrica
+        estudiantes_no_compartidos = estudiantes_1 ^ estudiantes_2
+        print(estudiantes_no_compartidos) # {'Ana', 'Fernando', 'Valeria'}
+
+
+    Propiedades de conjuntos:
+
+        Los conjuntos tienen algunas propiedades muy interesantes que podemos utilizar.
+        Una de ellas es que SOLO PUEDE HABER UN ELEMENTO DE CADA VALOR. Esto significa que si queremos añadir algun elemento que ya existe 
+        este no se añadira. Sin embargo para quitar elementos podemos usar discard() o remove().
+
+        colores = {'rojo', 'naranja', 'amarillo', 'verde', 'azul'}
+
+        # Agregar un elemento
+        colores.add('violeta')
+        colores.add('rojo') # No se agrega, ya existe
+
+        # Eliminar un elemento
+        colores.remove('amarillo')
+        colores.discard('blanco') # No pasa nada, no existe
+
+        print(colores) # {'naranja', 'verde', 'rojo', 'azul', 'violeta'}
+
+
+        Otra propiedad es verificar si un conjunto es subconjunto de otro
+        El método .issuperset() en Python se usa con conjuntos (set) para verificar si un conjunto contiene todos los elementos de otro conjunto.
+
+        A = {1, 2, 3, 4, 5}
+        B = {2, 3}
+
+        print(A.issuperset(B))  # True, porque A contiene todos los elementos de B
+
+        C = {6, 7}
+        print(A.issuperset(C))  # False, porque A no contiene los elementos de C
+
+
+        Caso practico del .issuperset():
+
+        Verificar permisos:
+
+        permisos_usuario = {"leer", "escribir", "ejecutar"}
+        permisos_requeridos = {"leer", "escribir"}
+
+        if permisos_usuario.issuperset(permisos_requeridos):
+            print("Acceso concedido")
+        else:
+            print("Acceso denegado")
+
+        1. Aquí verificamos si un usuario tiene todos los permisos necesarios.
+
+        2. Comprobar si un conjunto de datos está contenido en otro (útil en validaciones o filtrados).
+
+        Operaciones de teoría de conjuntos, como verificar si un grupo de números o palabras es un subconjunto de otro.
+
+
+
+    Utilidades avanzadas de los conjuntos:
+
+        Subconjuntos y superconjuntos:
+
+        Esto es un concepto muy importante que debemos conocer. Decimos que un conjunto A es un subconjunto de otro conjunto B si cada elemento de a
+        se encuentra en B
+
+        La notación para esto es A ⊆ B.
+
+        Y si algun elemento de A no se encuentra en B entonces decimos que A no es un subconjunto de B.
+
+        .issubset()
+
+        A = {1,2,3}
+        B = {1,2,3,4,5}
+        print(A.issubset(B)) # True
+
+
+
+
+        Por otro lado decimos que A es un superconjunto de B si cada elemento de B se encuentra en A
+
+        La notación para esto es A ⊇ B
+
+        .issuperset()
+
+        A = {1,2,3,4}
+        B = {1,2,3}
+        print(A.issuperset(B)) # True
+
+
+        Conjuntos como filtros:
+
+            Se pueden usar en varias ocasiones como filtros, para filtrar listas:
+
+            Por ejemplo, supongamos que tenemos una lista y queremos quedarnos con los que son divisibles de 3.Podemos generar un conjunto 
+            que contenga todos los números que son múltiplos de 3 y luego filtrar nuestra lista de acuerdo a este conjunto.
+
+            numeros = [1,2,3,4,5,6,7,8,9,10]
+            multiplos_3 = {n for n in numeros if n % 3 == 0} # generamos el conjunto de múltiplos de 3
+            numeros_filtrados = [n for n in numeros if n in multiplos_3] # filtramos la lista usando el conjunto de múltiplos de 3
+            print(numeros_filtrados) # [3, 6, 9]
+
+            Explicacion del n for n in:
+
+                {expresion for variable in iterable if condicion}
+                
+                -expresion → Lo que queremos agregar al conjunto (en este caso, n).
+
+                -for variable in iterable → Itera sobre los elementos de iterable (aquí, numeros).
+
+                -if condicion → Filtro opcional que decide qué elementos incluir.
+
+
+
+
+
+
+            Manera mas sencilla:
+
+                multiplos_3 = set()  # Crear un conjunto vacío
+                for n in numeros:
+                    if n % 3 == 0:
+                        multiplos_3.add(n)  # Agregar solo los múltiplos de 3
+
+                print(multiplos_3)
