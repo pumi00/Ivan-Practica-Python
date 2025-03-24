@@ -117,3 +117,131 @@ LISTAS:
     frutas = ["pera", "manzana", "uva", "mango"]
     del frutas[0] # elimina pera
     frutas.remove('manzana')  # elimina manzana
+
+
+
+DICCIONARIO:
+
+    Los diccionarios permiten que los preogramadores asignen valores a ciertas palabras claves y luego recuperen esos valores 
+    mas adelante mediante la referencia de la palabra clave.+
+
+    Los diccionarios son mutables, lo que significa que podemos modificar, agregar y eliminar elementos
+
+    En terminos de sintaxis, los diccionarios se definen con llaves y no con con corchetes:
+
+        personas = {'Juan': 31, 'Pedro': 25, 'Maria': 42}
+
+    Una vez tenemos nuestro diccionario definido, podemos acceder a ellos de distintas maneras:
+
+        Para acceder a la edad de Juan:
+            print(personas['Juan']) = "31"
+
+
+
+    Los diccionarios son estructuras de datos que permiten almacenar elementos de forma clave-valor:
+        Se usan para almacenar datos clave-valor y son muy utiles para cuando queremos accedere rapidamente a ciertos elementos 
+        sin recorrer una lista o un conjunto completo.
+
+    En un diccionario las claves son inmutables y unicas lo que significa que no pueden ser duplicadas o borradas,
+    mientras que los valores son de cualquier tipo de datos y pueden ser duplicadas y no son unicas.
+
+
+        mi_diccionario = {'clave1': valor1, 'clave2': valor2, 'clave3': valor3}
+
+    Si cogemos como ejemplo este diccionario creado llamado mi_diccionario:
+    
+        Podemos agregar datos:
+            mi_diccionario['nueva_clave'] = nuevo_valor
+
+        Modificar el valor de cualquier clave dentro del diccionario:
+            mi_diccionario['clave1'] = nuevo_valor
+
+        Eliminar clave y valor asociado dentro del diccionario:
+            del mi_diccionario['clave1']
+
+        Acceder a los datos por sus claves en lugar de su posicion:
+            nombre = mi_diccionario['clave1']
+            print(nombre); #Imprimira valor1.
+
+        De igual manera para moidificar su valor:
+            nombre['clave1'] = 26
+            print(nombre); #Imprimira 26
+
+        O añadir nuevas clave-valor al diccionario:
+            nombre['peso'] = 70
+            print(nombre) = Todo el diccionarion mas el peso = 70
+
+        Tambien es posible determinar si una clave existe en el diccionario:
+            if 'nombre' in persona:
+                print('La clave "nombre" existe en el diccionario')
+            else:
+                print('La clave "nombre" no existe en el diccionario')    
+
+
+
+    Los diccionarios tambien pueden ser utilizados en combinacion con otros conceptos, como las funciones.
+    Por ejemplo podemos crear una funcion que tenga como argumento un diccionario y que devuelva el valor correspondiente
+    a una clave especifica.
+
+        def consulta_valor(diccionario, clave):
+            return diccionario[clave]
+
+    
+    Son muy usados en python para almacenar informacion compleja en una estructura facilmente accesible.
+    Por ejemplo:
+        En una tienda online almacenamos la informacion del catalogo de productos en un diccionario
+        donde cada clave era el nombre del producto y cada valor era un objeto que contenía la descripción, el precio, el inventario disponible 
+        y otros detalles relevantes.
+
+        catalogo_productos = {
+            "Camiseta de algodon": {"descripcion": "Camiseta comoda de algodon", "precio": 20, "inventario": 50},
+            "Sudadera con capucha": {"descripcion": "Sudadera suave y abrigadora", "precio": 40, "inventario": 30},
+            "Paquete de stickers": {"descripcion": "Stickers divertidos para decorar laptops, cuadernos, etc.", "precio": 5, "inventario": 100}
+        }
+
+        catalogo_productos["Taza de cafe con logotipo"] = {"descripcion": "Taza de ceramica con el logotipo de la tienda", "precio": 10, "inventario": 20}
+
+
+        En este ejemplo hemos agregado Taza de cafe con logotipo al diccionario de catalogo_productos.
+
+
+    Al uso de los diccionarios hay funciones que nos pueden ayudar a hacernos la vida mas facil a la hora de realizar acciones con estos diccionarios.
+
+    La funcion len es uno de ellos, gracias a el podemos recorrer toda la el diccionario y de esta manera poder iterar con el de manera sencilla:
+
+    Tomamos este diccionario como ejemplo:
+
+        mi_dict = {'nombre': 'Juan', 'edad': 25, 'ciudad': 'Mexico'}
+
+         Usamos la funcion len:
+            print(len(mi_dict))
+
+        Esto nos devolvera 3, ya que dentro del diccionario tenemos solo 3 elementos de clave-valor.
+
+
+        Tambien se puede usar la funcion len en un diccionarion vacio de esta manera nos devolvera 0,
+        porque no hay nada dentro de el.
+
+
+        Es importante saber que la funcion len solo nos devolvera la cantidad de elementos, no la cantidad clave-valor.
+
+
+        mi_dict = {'a': 1, 'b': 2, 'c': 3, 'd': {'e': 4, 'f': 5}}
+
+        Si tenemos este diccionario por ejemplo y usamos print(mi_dict), este nos devolvera 4.
+
+
+
+
+
+CONJUNTOS:
+
+    Los conjuntos son elementos unicos en python que nos permite guardar elementos unicos sin mantener un orden en particular.
+    Esto los convierte en una herramienta muy util a la hora de hacer comparaciones entre grupos de datos o para eliminar, elementos duplicados.
+
+    Para comenzar, vamos a crear un conjunto y agregar algunos elementos. 
+    En Python, un conjunto se define utilizando llaves {} o utilizando la función set().
+
+    # Crear un conjunto
+    numeros = {1, 2, 3, 4, 5}
+    letras = set(['a', 'b', 'c', 'd'])
