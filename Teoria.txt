@@ -516,4 +516,88 @@ MANIPULACIONES DE STRINGS:
 
         La concaternacion: es la operacion que se usa para unir dos o mas cadenas. Para lograr esto usamos el operador +.
 
+        message1 = "¡Hola"
+        message2 = "amigos!"
+        message3 = message1 + " " + message2
+        print(message3) # Output: ¡Hola amigos!
+
+
+
+        Y la operacion de recorte se usa para eliminar una porcion de la cadena original.
+
+        Para recortar la cadena necesitamos saber el indice de inicio y el indice de fin.
+
+        message = "Querido diario, hoy he vivido una experiencia inolvidable."
+        new_message = message[30:57] # Recorta la cadena original para mostrar solo las palabras "una experiencia inolvidable"
+        print(new_message) # Output: una experiencia inolvidable
+
+        El indice del principio que hemos puesto es de 26 ya que de esta manera si vemos como se ordenan serian desde el 0 hasta el 58 en este caso:
+
+    Q  u  e  r  i  d  o     d  i  a  r  i  o  ,     h  o  y     h  e     v  i  v  i  d  o     u  n  a     e  x  p  e  r  i  e  n  c  i  a     i  n  o  l  v  i  d  a  b  l  e  .
+    0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58
+
+    Ahora queremos que solo imprima las palabras una experiencia inolvidable, por lo tanto queremos que empiece en el 30 y acabe en el 57 que es despues de la con el punto.
+
+
+
+    LOS METODOS DE CADENAS PUEDEN UTILIZARSE PARA ENCONTRAR CARACTERES Y SUBCADENAS:
+
+        Para hacer tal practica podemos usar el metodo find(). En este metodo busca el caracter especifico en la cadena y devuelve la posicion en la que se encuentra,
+        o sino existe devuelve -1 es decir sino existe en la cadena.
+
+            texto = "Hola mundo"
+            print(texto.find("m")) #Output: 5 
         
+            Es decir no cuenta los espacios entre strings como podemos ver en este caso.
+
+            print(texto.find("x")) #Output: -1.  
+
+            Aqui al no encontrarse la x nos devolveria el -1 como podemos ver.
+
+
+        Para encontrar una subcadena dentro de una cadena utilizamos el metodo .index()
+        Este metodo busca la subcadena que le digamos y nos dice la posicion en la que empieza o lanza una excepcion si no encuentra nada.
+
+        texto = "Hola mundo"
+        print(texto.index("mun")) # Output: 5
+        print(texto.index("x")) # Output: ValueError: substring not found
+
+        
+        Si queremos contar las veces que aparece una subcadena en la cadena usamos el .count().
+
+        texto = "Hola mundo"
+        print(texto.count("o")) # Output: 2
+
+
+
+        Tambien podemos averiguar si una cadena empieza o termina con una subcadena.
+
+        texto = "Hola mundo"
+        print(texto.startswith("Hola")) # Output: True
+        print(texto.endswith("mundo")) # Output: True
+
+        startswith: esta es para ver si empieza
+
+        endswith: esta es para ver si termina.
+
+
+        Ejemplo de uso.
+
+
+
+        nombre_edad = "Juan 32"
+        nombre, edad = nombre_edad.split()
+
+            split():
+
+            La función .split() divide la cadena "Juan 32" en una lista usando los espacios como separador.
+
+            Resultado: ["Juan", "32"]
+
+            Desempaquetado de variables:
+
+            nombre, edad = ["Juan", "32"]
+
+            nombre recibe "Juan"
+
+            edad recibe "32"
