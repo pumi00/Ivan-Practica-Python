@@ -407,3 +407,113 @@ CONJUNTOS:
                         multiplos_3.add(n)  # Agregar solo los múltiplos de 3
 
                 print(multiplos_3)
+
+
+    Conjuntos inmutables:
+
+            Esto se define como conjuntos que no pueden ser modificados una vez creados.
+            Para esto usamos el tipo de dato .frozenset(). Los conjuntos inmutables a veces se usan con conjuntos mutables para que no se modifiquen
+            los datos por accidente de un conjunto.
+
+            conjunto = {1,2,3}
+            conjunto_inmutable = frozenset(conjunto) # creamos el conjunto inmutable a partir del conjunto original
+            print(conjunto_inmutable) # frozenset({1, 2, 3})
+
+
+
+            Las operaciones con conjuntos son muy utiles a la hora de operar con ellos. Como mostramos anteriormente son:
+                Union, Interseccion y diferencia simetrica
+
+
+
+
+    Operaciones avanzadas con conjuntos:
+
+        Eliminar elementos duplicados:
+            A veces podemos tener elementos duplicados en una lista por lo que a la hora de eliminarlos podemos hacerlo de la siguiente semana:
+                
+                a = [1, 2, 3, 2, 4, 1]
+                b = list(set(a))
+                print(b)  # [1, 2, 3, 4]
+
+                Convertimos la lista a un conjunto y luego volver a convertirlo a una lista
+
+
+
+
+MANIPULACIONES DE STRINGS:
+
+    La manipulacion de strings se refierfe a la capacidad de manipular, modificar o procesar informacion textual utilizando herramientas especificas en nuestro
+    lenguaje.
+
+    Ejemplo:
+
+    # Operador de suma
+
+        string1 = "¡Hola"
+        string2 = "Mundo!"
+        saludo = string1 + " " + string2
+        print(saludo) # Salida: ¡Hola Mundo!
+
+    # Operador de multiplicación
+
+        gritos = "¡Ayuda! " * 3
+        print(gritos) # Salida: ¡Ayuda! ¡Ayuda! ¡Ayuda!
+
+
+    Ademas de estos operadores que tenemos en python tambien contamos con una gran variedad de funciones para trabajar con strings:
+
+        # Estos operadores se usan despues de la variable de string con un . y la funcion que queramos usar #
+
+        len(): Recorre todo el string
+
+            mensaje = "Ejemplo de string"
+            longitud = len(mensaje)
+            print(longitud) # Salida: 18
+
+
+        upper(): Convierte un string en mayuscula
+
+            titulo = "manipulación de strings en Python"
+            titulo_en_mayusculas = titulo.upper()
+            print(titulo_en_mayusculas) # Salida: MANIPULACIÓN DE STRINGS EN PYTHON
+
+
+        lower(): Convierte un string en minuscula
+
+            nombre = "JUAN PÉREZ"
+            nombre_en_minusculas = nombre.lower()
+            print(nombre_en_minusculas) # Salida: juan pérez
+
+
+        replace(): Reemplaza un substring con otro dentro de un string
+
+            mensaje = "Hola mundo"
+            mensaje_modificado = mensaje.replace("mundo", "universo")
+            print(mensaje_modificado) # Salida: Hola universo
+            
+
+        split(): Divide un string en substrings que estan contenidas dentro de una lista separados por un caracter especifico.
+
+            palabras = "¡Bienvenidos al curso de Python!"
+            palabras_separadas = palabras.split(" ")
+            print(palabras_separadas) # Salida: ['¡Bienvenidos', 'al', 'curso', 'de', 'Python!']
+
+
+        join(): Une una lista de strings utilizando un separador especifico.
+
+            palabras = ['¡Bienvenidos', 'al', 'curso', 'de', 'Python!']
+            separador = " "
+            mensaje = separador.join(palabras)
+            print(mensaje) # Salida: ¡Bienvenidos al curso de Python!
+
+
+        
+
+
+
+    Concatenacion y recorte:
+
+        La concaternacion: es la operacion que se usa para unir dos o mas cadenas. Para lograr esto usamos el operador +.
+
+        
