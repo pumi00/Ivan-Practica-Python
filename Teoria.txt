@@ -601,3 +601,108 @@ MANIPULACIONES DE STRINGS:
             nombre recibe "Juan"
 
             edad recibe "32"
+
+
+
+TRABAJAR CON ARCHIVOS:
+
+    En python existen dos tipos de archivos: los archivos de texto y los binarios.
+
+        Archivos de texto: Son aquellos que contienen caracteres legibles para humanos, como numeros y letras.
+
+        Archivos binarios: Contienen datos codificados en binario, que solo las aplicaciones pueden entender.
+
+    
+    Para empezar a trabajar con los archivos en python lo primeor que tenemos que hacer, es abrirlo y para ello usamos la funcion,
+    open:
+
+        archivo = open("mi_archivo.txt", "r")
+
+        Donde se encuentra la r es del tipo que queremos abrir el archivo, es decir en este caso es en forma de lectura, que se indica con una r.
+
+        Tipos de abrir el archivo:
+
+            "r": lectura.
+
+            "w": escritura.
+
+            "r+": lectura y escritura.
+
+
+
+        Ahora que hemos abierto el archivo, podemos leer su contenido o escribir algo. Para leer el contenido del archivo usamos la funcion read.
+
+            contenido = archivo.read()
+
+        La variable contenido ahora nos devuelve todo lo que estaba en el archivo. Si queremos leerlo por partes porque el archivo es demasiado grande,
+        podemos utilizar readline, que esto nos devuelve una linea cada vez que lo llamamos.
+
+            linea1 = archivo.readline()
+            linea2 = archivo.readline()
+
+
+            A continuacion vamos a poner mas ejemplos que se pueden dar con el readline():
+
+            Antes de enseñar los ejemplo haremos una buena pracica en python que es el uso del with, que esto nos hace,
+            abrir y cerrar el archivo de manera automatica sin que nosotros se lo digamos.
+
+                Si queremos leer las 5 primeras lineas:
+
+                    with open("archivo.txt", "r") as archivo:
+                        for _ in range(5):
+                            linea = archivo.readline()
+
+
+
+                Si queremos que nos lo lea cada 2 lineas:
+
+                    with open("archivo.txt", "r") as archivo:
+                        for i, linea in enumerate(archivo):
+                            if i % 2 == 0:
+                                print(linea.strip())
+
+
+
+                Si queremos que lea lineas especificas:
+
+                    with open("archivo.txt", "r") as archivo:
+                        for linea in islice(archivo, 0, None, 2):
+                            print(linea.strip())
+
+
+                    La funcion islice es una funcion del modulo itertools que permite obtener una "rebanada" de un iterable, como si estuviera usando el operador
+                    slicing [:] en una lista, pero sin cargar todo el iterable en memoria.
+
+                    Se compone de: itertools.islice(iterable, start, stop, step)
+
+
+                    iterable: Cualquier objeto iterabe
+
+                    start: Inicia desde donde comienza la rebanada 
+
+                    stop: Indica donde termina 
+
+                    step: Cuantos elementos salta
+
+
+        Para escribir en el archivo usamos el write:
+
+            archivo.write("Hola mundo!")
+
+            Esta linea de codigo escribe Hola mundo! en archivo.txt
+
+
+        Una vez que hayamos terminado de trabajar con el archivo mi_archivo.txt tendremos que cerrarlo.
+
+        archivo.close()
+
+
+
+
+        Un ejemplo para abrir, leer y cerrar el archivo seria de esta forma:
+
+            archivo = open('prueba.txt', 'r')
+            contenido = archivo.read()
+            print(contenido)
+            archivo.close()
+
