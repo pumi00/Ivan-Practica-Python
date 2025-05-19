@@ -706,3 +706,230 @@ TRABAJAR CON ARCHIVOS:
             print(contenido)
             archivo.close()
 
+
+
+
+
+MANEJO DE ERRORES EN PYTHON:
+
+    Los errores en python como en cualquier lenguaje son bastante recurrentes y mas al principio por eso para poder manejarlos se usan con excepciones:
+        Las excepciones son objetos que se utilizan para manejar errores y es la forma mas eficaz y elegante de manejar los errores.
+
+    Un error comun en Python es el NameError, que se produce cuando se utiliza una variable que no ha sido definida.
+
+
+    try: 
+        print(variable)
+
+    except NameError:
+        print("La variable no ha sido definida")
+
+
+    Este código intenta imprimir la variable, pero si se produce un NameError, el código dentro del bloque except se ejecutará, en este caso,
+    imprimirá un mensaje indicando que la variable no ha sido definida.
+
+    Otro error común es el TypeError, que se produce cuando intentamos realizar una operación con un objeto de tipo incorrecto.
+    Por ejemplo si queremos sumar un numero con una cadena de texto.
+
+    numero = 5
+    texto = "Hola mundo"
+    resultado = numero + texto
+    print("resultado")
+
+
+
+
+    numero = 5
+    texto = "Hola mundo"
+    try:
+        resultado = numero + texto
+    except TypeError:
+        print("No se puede sumar un número con una cadena de texto")
+
+
+    Este código intenta sumar el número y la cadena de texto, pero si se produce un TypeError, el código dentro del bloque except se ejecutará
+    e imprimirá un mensaje como que no se pueden sumar ambos tipos de datos.
+    
+
+
+
+PERSONALIZAR EXECPCIONES Y MEJORAR LA LEGIBILIDAD DE NUESTRO CODIGO:
+
+    A veces en python es util personalizar las exepciones cuando se manejan para tener un manejo de errores mas comprensibles.
+
+    Para crear una excepcion personalizada, necesitamos crear una clase que herede de la clase "Exeption" 
+
+    class MiErrorPersonalizado(Exception):
+        pass 
+
+    
+    Una vez que hemos definido nuestra excepcion personalizada podemos levantar nuestro codigo cuando surja una situacion particular.
+
+    def mi_funcion():
+        raise MiErrorPersonalizado("Ocurrio un error personalizado")
+
+    
+    Uso comunes de raise statement:
+
+        Lanzar un error personalizado cuando ciertas condiciones no se cumplen.
+        Re-lanzar una excepcion capturada.
+
+
+    Puedes lanzar cualquier excepcion que herede de BaseExepcion, pero en la practica se usan clase derivadas de Exepcion.
+
+    ValueError,
+
+    TypeError,
+
+    RuntimeError,
+
+    KeyError,
+
+    Exepciones personalizadas (definidas por el usuario)
+
+
+    Tambien en las exepciones podemos crear argumentos para proporcionar un contexto adicional
+
+    class ValorInvalidoError(Exception):
+    def __init__(self, mensaje, valor):
+        super().__init__(mensaje)
+        self.valor = valor
+
+
+    En este ejemplo hemos definidio una nueva exepcion llamada ValorInvalidoError que hereda de la clase Exeption.
+    Hemos proporcionado un mensaje que describe el error, asi como un argumento adicional llamado valor que almacena el valor que causo la exepcion
+
+
+    Y se usa de esta manera 
+    
+    def mi_funcion(valor):
+    if valor < 0:
+        raise ValorInvalidoError("El valor no puede ser negativo", valor)
+
+
+
+
+
+USO DEL FINALLY PARA UNA BUENA EJECUCION DEL CODIGO:
+
+
+    Para poder usar en la programacion codigo que es de manera obligatoria su ejecucion podemos usar el finally idependientemente si hay un error o no.
+
+    Se usa con los bloques try and except. El bloque try de "intentar" ejecuta un conjunto de instrucciones mientras que el bloque except se encarga de "atrapar"
+    cualquier exepcion o error durante la ejecucion del bloque try.
+
+    try:
+        x = 5 / 0
+    except ZeroDivisionError:
+        print("No puedes dividir entre cero.")
+    finally:
+        print("Este código se ejecutará sin importar si se produjo una excepción o no.") 
+
+
+
+
+    Intentamos dividir el numero 5 entre 0 lo cual produce un error de ZeroDivision el bloque except atrapa ese error y se ejecuta el finally imprimiendo
+    otro mensaje en la consola 
+
+
+    Otro ejemplo que podemos ver es el ValueError pero como la exepcion es realmente el que ocurre es ZeroDivisionError el bloque except no se ejecutara pero se
+    imprimira el bloque finally.
+
+
+
+
+
+
+MODULARIDAD Y ORGANIZACION
+
+
+    La modularidad ayuda a nuestro codigo a organizarla en modulos y paquetes.
+    La modularidad tambien nos permite reutilizar el codigo en diferentes proyectos sin tener que volver a escribirlo
+
+    Esto es la clave para la organizacion de nuestro codigo. Un modulo es un archivo que contiene definiciones de funciones, clases y variables.
+    Mientras que un paquete es una coleccion de modulos y otros paquetes qeu se pueden importar en otros proyectos.
+
+    Un ejemplo seria:
+
+        Si estas construyendo una aplicacion que necesita interactuar con una base de datos, podrias crear un modulo que contenga todas las funciones relacionadas,
+        con la base de datos. Estas funciones se puede reutilizar en otros proyectos para ahorrarte tiempo.
+
+
+    #archivo modulo_ejemplo.py 
+    def suma(a, b):
+        return a + b
+
+    def resta(a, b):
+        return a - B
+
+    
+    Este archivo contiene os funciones de suma y resta que pueden ser importadas en otros archivos de python para ser usadas ahi. 
+    Para importarla en otro archivo usamos el import seguida del nombre del archivo sin la extension .py 
+
+
+
+    #archivo principal.py
+    import modulo_ejemplo 
+
+    print(modulo_ejemplo.suma(3,4))
+    print(modulo_ejemplo.resta(3,4))
+
+
+    Con esto podemos hacer un mejor uso de las funciones y de esta manera tener todo organizado en paquetes y modulos y asi usarlos cuando queramos, como 
+    vemos en el ejemplo de arriba que hemos accedido a la funcion de resta y suma de otro archivo que teniamos.
+
+
+
+La creacion de modulos permite reutilizar codigo compartido entre proyectos:
+
+    Esto es una tecnica muy eficaz para optimizar la reutilizacion de codigo en diferentes proyectos. Es muy comun que escribamos todo el codigo en un archivo.
+
+    Sin embargo esto no es lo recomendable, ya que a medida que el proyecto aumenta de tamaño, resulta dificil de mantener y modificar.
+
+    La utilizacion de modulos, tambien llamados bibliotecas, nos permite separar y organizar de manera logica y coherente el codigo fuente en direntes archivo.
+
+
+    Supongamos que estamos desarrollando diferentes modulos para un sistema de gestion de proyectos. Podriamos modularizar el codigo de la siguiente manera:
+
+    Modulo usuarios: Contiene funciones y clases relaciones con el manejo de usuarios.
+
+    Modulo Proyectos: Contiene funciones y clases relacionadas con el manejo de proyectos.
+
+    Modulo Tareas: Contiene la funcionabilidad relacionada con la asignacion y seguimiento de tareas.
+
+
+    Cada uno de los modulos contendria su propio archivo de Python y podriamos importar los diferentes modulos segun los requerimientos de cada proyecto.
+    Ademas lo efectivo de esto es que si queremos modificar un modulo esto no afectara a los demas por lo que podemos actualizar los modulos sin miedo de
+    romper o que nos cause algun error algo.
+
+
+
+
+    # Archivo factores.py
+"""
+Este módulo contiene las funciones relacionadas con cálculo de factores
+"""
+
+def obtener_factores(numero):
+    """
+    Retorna una lista de factores del número ingresado
+    """
+    factores = []
+    for i in range(1, numero+1):
+        if numero % i == 0:
+            factores.append(i)
+    return factores
+
+def es_primo(numero):
+    """
+    Retorna True si el número ingresado es primo, False en caso contrario
+    """
+    if len(obtener_factores(numero)) == 2:
+        return True
+    else:
+        return False
+
+
+
+    Este modulo contiene dos funciones: obtener_funciones que obtiene los factores de un numero y es_primo que retorna True si el numero es primo.
+    Para utilizar este modulo en otro proyecto bastaria con importar el archivo factores.py y utilizar las funciones definidas dentro del modulo.
