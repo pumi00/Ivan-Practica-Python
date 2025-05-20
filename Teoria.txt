@@ -933,3 +933,148 @@ def es_primo(numero):
 
     Este modulo contiene dos funciones: obtener_funciones que obtiene los factores de un numero y es_primo que retorna True si el numero es primo.
     Para utilizar este modulo en otro proyecto bastaria con importar el archivo factores.py y utilizar las funciones definidas dentro del modulo.
+
+
+
+
+
+    Para crear un paquete usamos un archivo init.py y subdirectorios con modulos:
+
+        Para lograr una organizacion adecuada en proyectos de mayor embergadura seguimos los siguientes pasos:
+
+            1. Crear una carpeta con el nombre del paquete
+
+            2. Dentro de la carpeta, crear un archivo init.py
+
+            3. Crear subdirectorios dentro de la carpeta, cada uno con su propio archivo init.py si fuera necesarios
+
+            4. Agregar los modulos al subdirectorio 
+
+
+    El init.py es el archivo que ejecuta cuando importamos el paquete. Puede estar vacio o generalmente se utiliza para configurar el paquete y 
+    para importar submodulos.
+
+
+    print("Iniciando paquete...")
+    from paquete.subpaquete import modulox, moduloY
+
+
+    En este ejemplo vemos como imprimos un mensaje de inicio y importar dos modulos de un subpaquete.
+
+
+
+
+    print("Iniciando subpaquete...")
+    from paquete.subpaquete.modulox import funcionX
+
+
+    En este ejemplo importamos una funcion del modulo modulox
+
+
+    Una vez que hemos creado nuestro paquete y los subdirectorios de los modulos podemos importarlos desde nuestro script:
+
+        import paquete.subpaquete.modulox
+
+    O podemos importar funciones especificas del modulo:
+
+        from paquete.subpaquete.modulox import funcionX
+
+
+
+
+
+Compartir nuestros paquetes en la biblioteca:
+
+    Un paquete es simplemente un directorio que contiene modulos Python y un archivo _init_.py especial que indica que el directorio es un paquete. 
+
+
+CREACION DE UN PAQUETE:
+
+    Creamos un directorio llamado mypackage:
+
+        mypackage/
+        ├── __init__.py
+        └── mymodule.py
+
+    El archivo mymodule.py contiene una funcion sencilla:
+
+    def hello():
+        print("Hello World")
+
+
+    El archivo _init_.py importa la funcion hello de module.py y la hace accesible para quien importe el paquete:
+
+    #_init_.py
+
+    from .module import hello 
+
+
+    Para importar cogemos el nombre del archivo sin el .py
+
+
+
+
+
+    Ahora podemos usar importar la funcion y usar la funcion hello:
+
+    #main.py
+
+    from mypackage import Hello
+
+    hello() #Imprime Hello World
+
+
+
+
+
+PAQUETES MAS COMPLEJOS:
+
+
+    mypackage/
+    ├── __init__.py
+    ├── mymodule.py
+    └── subpackage/
+        ├── __init__.py
+        └── anothermodule.py
+
+
+    El archivo anothermodule.py puede contener una funcion como esta:
+
+        def goodbye():
+            print("Goodbye, cruel world!")
+
+
+    Ahora en el archivo _iit_.py importamos la funcion goodbye:
+
+    from .anothermodule import goodbye
+
+
+    Finalmente en nuestro archivo main.py importamos la funcion hello y la funcion del submodulo goodbye:
+
+        from mypackage import hello
+        from mypackage.subpackage import goodbye
+
+        hello()  # Output: "Hello, world!"
+        goodbye()  # Output: "Goodbye, cruel world!"
+        
+
+
+
+    Aqui ahora podemos ver una forma de proporcionar el codigo a otros progrmadores de manera eficaz y que lo puedan usar incluso casi sin leer que hace
+    y comprendan que funcion estan importando:
+
+
+
+    def funcion_ejemplo(argumento1, argumento2):
+    """Una función que toma dos argumentos y devuelve su suma.
+
+    Args:
+        argumento1: un número entero o decimal.
+        argumento2: otro número entero o decimal.
+
+    Retorna:
+        La suma de argumento1 y argumento2.
+
+    Raises:
+        TypeError: si alguno de los argumentos no es un número.
+    """
