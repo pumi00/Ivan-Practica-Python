@@ -1078,3 +1078,176 @@ PAQUETES MAS COMPLEJOS:
     Raises:
         TypeError: si alguno de los argumentos no es un número.
     """
+
+
+
+CREACION DE CLASES:
+
+    Crear una clase en pyhton significa crear nuevos objetos con atributos y metodos que nos permitan dar estructura y sentido a nuestro codigo.
+
+    A traves de la reutilizacion de las clases podemos optimizar el codigo, evitar repeticiones y omitir errores innecesarios.
+    En este ejemplo primero tenemos que definir una clase estudiante que tenga atributos como nombre, edad y materia. Ademas tambien es importante agregar metodos
+    que nos permitan acceder y modificar estos atributos de manera dinamica.
+
+    class Estudiante:
+        def _init_(self, nombre, edad, materia, calificacion):
+            self.nombre = nombre
+            self.edad = edad
+            self.materia = materia
+            self.calificacion = calificacion
+
+        def definir_materia(self, nueva_materia):
+            self.materia = nueva_materia
+
+        def definir_calificacion(self, calificacion):
+            self.calificacion = nueva_calificacion
+
+
+
+    En este ejemplo hemos definido la clase Estudiante que tiene los metodos definir_materia y definir_calificacion que nos permiten definir una nueva materia y nueva 
+    calificacion. Ademas cada objeto de la clase estudiante tiene atributos como nombre, edad, materia y calificacion.
+
+
+
+    Esto tambien nos permiten realizar herencia de otras clases previamente definidas. En este sentido, es posible, que tengamos que crear una clase padre. 
+    Que tenga unos comportamientos por sus subclases
+
+
+
+    Realizar una clase Padre:
+        
+        class Padre:
+            """Definicion de la superclase Padre"""
+            pass
+
+        class Hija(Padre):
+            """Definicion de la subclase Hija"""
+            pass
+
+        En esta clase Padre estamos definiendo una estructura de "pasar" sin agregar ningun atributo ni comportamiento.
+        De esta manera podemos heredar sus comportamientos de manera directa a las subclases.
+
+
+
+    Por ejemplo podemos tener una clase Animal que tenga atributos como nombre, edad, tipo, especie y color.
+    Apartir de esta podemos heredar caracteristicas especificas a otras subclases, como Perro, Gato, Tigre y Oso. 
+
+
+
+    class Animal:
+        def _init_(self, nombre, edad, tipo, especie, color):
+            self.nombre = nombre
+            self.edad = edad
+            self.tipo = tipo
+            self.especie = especie
+            self.color = color
+
+
+    class Perro(Animal):
+        def ladrar(self):
+            print("Guau guau")
+
+
+    class Gato(Animal):
+        def maullar(self):
+            print("Miau miau)
+
+
+    class Tigre(Animal):
+        def rugit(self):
+            print("Rawr rawr)
+
+
+    class Oso(Animal):
+        def hibernar(self):
+            print("Zzzz")
+
+
+
+
+
+
+
+     USAR OBJETOS NOS AYUDA A ESTRUCTURAR MEJOR NUESTRO CODIGO Y REDUCIR LA COMPLEJIDAD:
+
+        Una de las cosas mas importante ha sido la creacion de clases y su uso.
+
+
+
+
+        Un ejemplo es: Por ejemplo imaginemos que estamos haciendo una tienda online.
+
+            Creamos una clase llamada "Producto", que definira cualquier producto que tenga la tienda.
+
+
+        class Producto:
+            def _init_(self, nombre, descripcion, precio):
+                self.nombre = nombre
+                self. descripcion = descripcion
+                self.precio = precio
+
+
+        producto1 = Producto("Camiseta", "Una Camiseta de algodon", 10.99)
+        producto2 = Producto("Zapatillas", "Zapatillas deportivas", 49,99)
+
+
+
+
+
+    REUTILIZACION DE CODIGO:
+
+        La reutilizacion de codigo se hace mediante el uso de clases. La ventaja de las clases es que permiten encapsular la logica 
+        de un programa en modulos reutiizables. A su vez reducen la complejibilidad del codigo al permitir los objetos interactuar a traves de interfaces
+        claras.
+
+
+
+
+        class Calculadora:
+            def _init_(self, lista):
+                self.lista = lista
+
+
+            def suma(lista).
+                return sum(self.lista)
+
+
+            def promedio(lista):
+                return sum(self.lista) / len(self.lista)
+
+
+            def mediana(lista):
+                lista_ordenada = sorted(self.lista)
+                if len(lista_ordenada) % 2 == 0:
+                    mediana = lista_ordenada[len(lista_ordenada)//2] + 1
+                else: 
+                    mediana = lista_ordenada[len(lista_ordenada)//2]
+                return mediana
+
+
+
+        En este ejemplo, se ha desarrollado una clase Calculadora que recibe una lista de números como argumento durante su instanciación (en el método __init__). 
+        Además, se han definido tres métodos que realizan operaciones aritméticas sobre la lista (suma, promedio y mediana).     
+
+
+
+        numeros = [1, 2, 3, 4, 5]
+
+        calculadora = Calculadora(numeros)
+
+        suma = calculadora.suma()
+        promedio = calculadora.promedio()
+
+        print(suma)     # 15
+        print(promedio) # 3.0   
+
+
+
+
+
+
+
+
+    METODOS Y ATRIBUTOS DE CLASE EN PYTHON:
+
+        
