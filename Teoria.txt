@@ -1248,6 +1248,109 @@ CREACION DE CLASES:
 
 
 
-    METODOS Y ATRIBUTOS DE CLASE EN PYTHON:
+METODOS Y ATRIBUTOS DE CLASE EN PYTHON:
 
+    Los metodos de una clase son las que se definen dentro de una clase.
+    Estos pueden modificar, utilizar, devolver y tener acceso a las clases segun sea necesario.
+    En contraparte los metodos de instancia solo tienen acceso a los atributos de las constancias.
+
+
+
+    La estructura en si es muy similar a la de una funcion en python.
+    Se usa la palabra clave @classmethod antes de la definicion de metodo.
+
+
+    class MiClase
+        x=1
+
+        @classmethod
+        def metodo_de_clase(cls):
+            return cls.x
+
+    print(MiClase.metodo_de_clase())
+
+
+
+    En este ejemplo podemos ver como definimos la clase MiClase con un atributo x de valor 1 y un metodo metodo_de_clase que devuelve el valor x mediante
+    la variable cls. Es importante saber que cls es para referirse a la clase misma, no una instancia de la clase.
+
+
+
+
+    Los metodos de clases pueden ser utilizados para crear multiples constructores de clase.
+
+
+    Por ejemplo podemos crear una forma diferente de crear instancias de nuestra clase.
+
+
+    class MiClase:
+        def _init_(self, x, y):
+            self.x = x 
+            self.y = y 
+
+        @classmethod
+        def desde_string(cls, string):
+            x, y = map(int, string.split(','))
+            obj = cls(x, y)
+            return obj
+
+
+    obj1 = MiClase(1,2)
+    obj2 = MiClase.desde_string('3,4')
+    print(obj1.x, obj1.y)
+    print(obj2.x, obj2.y)
+
+
+
+ATRIBUTOS DE CLASE: como definir y utilizar variables compatibles en Python
+
+    Los atributos son variables compartidas por todas las instancias de un a clase. 
+
+    DEFINIR ATRIBUTOS:
+        Para definir una clase primero debemos crear la clase que lo va a contener. 
+        class MiClase:
+            variable_compartida = 0
+
+    ACCEDER A ATRIBUTOS DE CLASE:
+
+    Para acceder a los atributos de clase de una instancias lo hacemos a traves del nombre de una clase y atirbutos.
+
+    Podemos crear una instancia MiClase y luego modificar su atributo.
+
+    instancia_1 = MiClase()
+    instancia_1.variable_compartida = 1
+    print(instancia_1.variable_compartida)
+
+    instancia_2 = MiClase()
+    print(instancia_2.variable_compartida)
         
+
+
+
+HERENCIA Y POLIMORFISMO EN PYTHON: AMPLIA LA FLEXIBILIDAD DE TUS CLASES:
+
+
+La programacion orientada a objetos nos permite crear clases que pueden heredar propiedades, metodos y compartimientos de otras clases ya existentes.
+Esto nos permite crear clases hijas a partir de una clase padre.
+
+Herencia en python se logra por medio de una sintaxis sencilla que involucra la creacion de una nueva clase que hereda atributos y metodos de clase
+padre. Para crear una clase hija, simplemente agregamos el nombre de la clase padre en parentesis despues del nombre de la clase hija.
+
+Polimorfismo, es una caracteristica que nos permite utilizar objetos de diferentes clases de una manera intercambiable. Esto significa que el mismo metodo,
+o funcion puede ser utilizado en diferentes tipos de objetos, sin preocuparnos de los detalles de cada uno. Esto esta estrechamente relacionado con la 
+herencia y la superposicion de metodos.
+
+
+Superposicion de metodos es una tecnica que nos permite modificar el comportamiento de los metodos heredados de la clase padre en la hija. Esto se logra al 
+definir un metodo con el mismo nombre en la clase hija como en la clase padre.
+Cuando se llama a la clase hija, el interprete de python buscara la definicion del metodo en la clase hija primero y, si no encuentra los buscara en la padre
+
+Tambien podemos acceder a los metodos heredados de la clase padre utilizando la funcion super(). Llama a la clase padre directamente desde la clase hij, 
+ahorrandonos tiempo y esfuerzo en la reescritura de codigo
+
+
+
+
+COMO UTILIZAR LA HERENCIA PARA CREAR HIJA CON COMPONENTES SIMILARES PERO DIFERENTES FUNCIONALIDADES:
+
+
